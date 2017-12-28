@@ -27,12 +27,6 @@ class EmailForm extends React.Component {
     e.preventDefault();
     console.log('this.state', this.state);
 
-    let sentObj = {};
-
-    sentObj['subject'] = this.state.subject;
-    sentObj['receiver'] = this.state.receiver;
-    sentObj['emailInfo'] = this.state.emailInfo;
-
     axios.get('/sendEmail', {
       params: {
         subject: this.state.subject,
@@ -64,7 +58,7 @@ class EmailForm extends React.Component {
         <br />
 
         <label>
-          Receiver: <input type='text' name='receiver'
+          Receiver (seperate email by comma if you want to send to multiple receivers): <input type='text' name='receiver'
                     value={this.state.receiver} placeholder='Enter the email address you are sending to' onChange={this.textChange}></input>
         </label>
         <br />
