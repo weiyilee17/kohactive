@@ -1,0 +1,34 @@
+{
+  "name": "kohactive",
+  "version": "1.0.0",
+  "description": "kohactive coding challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server/index.js",
+    "react-dev": "webpack -d --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weiyilee17/kohactive.git"
+  },
+  "author": "Weiyi Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weiyilee17/kohactive/issues"
+  },
+  "homepage": "https://github.com/weiyilee17/kohactive#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "express": "^4.16.2",
+    "mailgun-js": "^0.14.0",
+    "nodemon": "^1.14.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "webpack": "^3.10.0"
+  }
+}
