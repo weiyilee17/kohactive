@@ -58,13 +58,13 @@ class EmailForm extends React.Component {
         <br />
 
         <label>
-          Receiver (seperate email by comma if you want to send to multiple receivers): <input type='text' name='receiver'
+          Receiver: <input type='text' name='receiver'
                     value={this.state.receiver} placeholder='Enter the email address you are sending to' onChange={this.textChange}></input>
         </label>
         <br />
 
         <label>
-          EmailInfo: 
+          Email text: 
           <br />
           <textarea name='emailInfo'
                     value={this.state.emailInfo} placeholder='Enter the text' onChange={this.textChange} />
