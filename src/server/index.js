@@ -9,17 +9,15 @@ let sendEmailSendGrid = require('../helper/sendEmailSendGrid.js');
 
 app.use(express.static(__dirname + '/../client/'));
 
-app.get('/sendemail', (req, res) =>{
-  console.log('req.query', req.query);
 
-  sendEmailSendGrid(req.query.subject, req.query.receiver, req.query.emailInfo);
+app.get('/sendEmailSG', (req, res) =>{
+  // console.log('req.query', req.query);
+  sendEmailSendGrid(req.query.subject, req.query.receiver, req.query.emailInfo, res);
+});
 
-
-  // sendEmailMailgun(req.query.subject, req.query.receiver, req.query.emailInfo);
-})
-
-
-
+app.get('/sendEmailMG', (req, res) => {
+  sendEmailMailgun(req.query.subject, req.query.receiver, req.query.emailInfo, res);
+});
 
 
 app.listen(port, () => {

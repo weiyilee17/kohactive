@@ -2,7 +2,7 @@ let api_key = require('../../emailConfig')['sendgrid'].apiKey;
 
 let sg = require('sendgrid')(api_key);
 
-let sendEmailSendGrid = function(subject, receiver, emailInfo) {
+let sendEmailSendGrid = function(subject, receiver, emailInfo, res) {
 
   let request = sg.emptyRequest({
     method: 'POST',
@@ -16,11 +16,10 @@ let sendEmailSendGrid = function(subject, receiver, emailInfo) {
             }
           ],
           subject: subject
-
         }
       ],
       from: {
-        email: 'kohacktive@tripvalet.me',
+        email: 'postmaster@mg.tripvalet.me',
         name: 'Lee'
       },
       content: [
@@ -34,16 +33,13 @@ let sendEmailSendGrid = function(subject, receiver, emailInfo) {
 
   sg.API(request)
     .then((response) => {
-      console.log(response.statusCode);
-      console.log(response.body);
-      console.log(response.headers);
+      res.status(200).send();
     })
     .catch((error) => {
       console.log(error.response.statusCode);
+      res.status(500).send();
     });
 
-
 }
-
 
 module.exports = sendEmailSendGrid;
