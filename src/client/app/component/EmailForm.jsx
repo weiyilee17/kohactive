@@ -73,7 +73,7 @@ class EmailForm extends React.Component {
   render() {
     return(
       <div>
-        <p>email form</p>
+        <p>Please type in necessary information!</p>
 
         <form onSubmit={this.sendEmail}>
           <label>
